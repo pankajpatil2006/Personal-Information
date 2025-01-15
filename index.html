@@ -121,14 +121,13 @@
             padding: 10px;
             background-color: #f1f1f1;
         }
-
     </style>
 </head>
 <body>
 
     <div class="chat-container">
         <div class="chat-header">
-            Naukri Chatbot - Pankaj Patil 
+            Naukri Chatbot - Pankaj Patil Assistant
         </div>
         <div class="chat-box" id="chat-box">
             <!-- Messages will appear here -->
@@ -151,7 +150,11 @@
             "Where are you currently living?",
             "Where are you from?",
             "What is your academic background?",
-            "What skills do you have?"
+            "What skills do you have?",
+            "How soon can you join?",
+            "What is your experience level?",
+            "Are you willing to relocate?",
+            "What is your LinkedIn profile?"
         ];
 
         // Display a welcome message
@@ -188,18 +191,36 @@
             const botMessage = document.createElement('div');
             botMessage.classList.add('message', 'bot-message');
 
-            if (question === "What is your age?") {
-                botMessage.innerText = "I am 24 years old.";
-            } else if (question === "Where are you currently living?") {
-                botMessage.innerText = "I am currently living in Kharadi, Pune, Maharashtra.";
-            } else if (question === "Where are you from?") {
-                botMessage.innerText = "I am from Nandurbar, Maharashtra.";
-            } else if (question === "What is your academic background?") {
-                botMessage.innerText = "I have a Bachelor's in Actuarial Science and a Master's in Statistics from North Maharashtra University.";
-            } else if (question === "What skills do you have?") {
-                botMessage.innerText = "I have skills in Python, SQL, Power BI, Machine Learning, Deep Learning, and NLP.";
-            } else {
-                botMessage.innerText = "Sorry, I cannot answer that. Please contact the chatbot owner.";
+            switch (question) {
+                case "What is your age?":
+                    botMessage.innerText = "I am 24 years old.";
+                    break;
+                case "Where are you currently living?":
+                    botMessage.innerText = "I am currently living in Kharadi, Pune, Maharashtra.";
+                    break;
+                case "Where are you from?":
+                    botMessage.innerText = "I am from Nandurbar, Maharashtra.";
+                    break;
+                case "What is your academic background?":
+                    botMessage.innerText = "I have a Bachelor's in Actuarial Science and a Master's in Statistics from North Maharashtra University.";
+                    break;
+                case "What skills do you have?":
+                    botMessage.innerText = "I have skills in Python, SQL, Power BI, Machine Learning, Deep Learning, and NLP.";
+                    break;
+                case "How soon can you join?":
+                    botMessage.innerText = "I am an immediate joiner.";
+                    break;
+                case "What is your experience level?":
+                    botMessage.innerText = "I am a fresher.";
+                    break;
+                case "Are you willing to relocate?":
+                    botMessage.innerText = "Yes, I am ready to relocate.";
+                    break;
+                case "What is your LinkedIn profile?":
+                    botMessage.innerText = "You can visit my LinkedIn profile here: https://www.linkedin.com/in/pankaj-patil";
+                    break;
+                default:
+                    botMessage.innerText = "Sorry, I cannot answer that. Please contact the chatbot owner.";
             }
 
             chatBox.appendChild(botMessage);
